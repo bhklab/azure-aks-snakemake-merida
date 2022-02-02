@@ -46,9 +46,9 @@ az storage blob upload-batch \
     --destination-path data
 
 # -- Configure and create AKS cluster
-
 clustername=aks-snakemake
 
+# Provision the cluster
 az aks create \
     --resource-group $resgroup \
     --name $clustername \
@@ -60,6 +60,10 @@ az aks create \
     --max-count 3 \
     --node-vm-size Standard_D3_v2
 
+# Get the login credentials, saved in .kube/config
 az aks get-credentials \
     --resource-group $resgroup \
     --name $clustername
+
+# Show basic cluster information
+kubectl cluster-info
