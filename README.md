@@ -32,6 +32,15 @@ If it is not automatically activated after installation please run
 
 ## Configuration
 
+TODO
+## Deployment
+
+Before running the included scripts, you need to login to Azure:
+
+```
+az login
+```
+
 ## References
 
 1. [Auto-scaling Azure Kubernetes cluster without shared filesystem](https://snakemake.readthedocs.io/en/stable/executor_tutorial/azure_aks.html)
