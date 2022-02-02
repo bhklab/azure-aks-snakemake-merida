@@ -1,12 +1,10 @@
 #!/bin/bash
 
-## TODO:: move configuration into a YML file and read from there
-## TODO:: how to manage secrets?
+# -- Read in configuration files
+source .azure
 
 # -- Configure which Azure resources to use
-region=canadacentral
-resgroup=rgUHN_Research_BHKLab_Batch
-stgacct=rguhnresearchbhklabbatch
+
 # Get the first key for the specified storage account
 stgkey=$(
     az storage account keys list \
