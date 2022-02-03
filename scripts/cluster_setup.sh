@@ -17,8 +17,6 @@ stgkey=$(
         --query "[0].value"
 )
 
-containername=snakemake-test
-
 # Create the container, fails if it exists
 az storage container create \
     --resource-group $resgroup \

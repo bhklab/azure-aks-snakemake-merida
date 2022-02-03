@@ -3,11 +3,21 @@
 # -- Authenticate to Azure
 az login
 
+
 # -- Load configuration files
 source .azure
+source .aks
 
-cd tmp
 
-# -- Fetch environment files to the Snakemake job
-wget https://snakemake.readthedocs.io/en/stable/executor_tutorial/workflow/snakedir.zip
-unzip
+# -- Configure Blob storage access for
+export AZ_BLOB_ACCOUNT_URL="https://${stgacct}.blob.core.windows.net"
+export AZ_BLOB_CREDENTIAL="$stgkey"
+
+
+# -- Run the pipline
+snakemake --kubernetes \
+    --default-remote-provider AzBlob \
+    --default-remote-prefix $containername \
+    --envvars AZ_BLOB_ACCOUNT_URL AZ_BLOB_CREDENTIALS \
+    --use-conda \
+    --jobs 3

@@ -3,5 +3,6 @@
 az login
 
 source .azure
+source .aks
 
-az aks delete --name akscluster --resource-group $resgroup
+az aks delete --name $clustername --resource-group $resgroup
