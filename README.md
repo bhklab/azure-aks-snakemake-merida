@@ -32,14 +32,15 @@ If it is not automatically activated after installation please run
 
 ## Configuration
 
-TODO
+Open the files named `dot_*`, fill in your values for the requested configuration variables, then rename the files as instructed in the
+comments in each file.
+
+This will ensure your specific configuration is not pushed to the
+GitHub.
+
 ## Deployment
 
-Before running the included scripts, you need to login to Azure:
-
-```
-az login
-```
+TODO::
 
 ## References
 
