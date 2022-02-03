@@ -1,0 +1,6 @@
+# Fill in the configuration and run `mv dot_aks .aks`
+clustername=your_cluster_name
+startnodes=your_number_nodes
+minnodes=your_min_nodes
+maxnodes=your_max_nodes
+vmsize=your_vm_size

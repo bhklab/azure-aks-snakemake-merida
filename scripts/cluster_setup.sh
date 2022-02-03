@@ -5,8 +5,7 @@ az login
 
 # -- Read in configuration files
 source .azure
-## TODO:: Make configuration file for cluster specifications
-# source .aks
+source .aks
 
 # -- Create a Blob storage container
 
@@ -46,7 +45,6 @@ az storage blob upload-batch \
     --destination-path data
 
 # -- Configure and create AKS cluster
-clustername=aks-snakemake
 
 # Provision the cluster
 az aks create \
@@ -55,10 +53,10 @@ az aks create \
     --vm-set-type VirtualMachineScaleSets \
     --load-balancer-sku standard \
     --enable-cluster-autoscaler \
-    --node-count 1 \
-    --min-count 1 \
-    --max-count 3 \
-    --node-vm-size Standard_D3_v2
+    --node-count $startnodes \
+    --min-count $minnodes \
+    --max-count $maxnodes \
+    --node-vm-size $vmsize
 
 # Get the login credentials, saved in .kube/config
 az aks get-credentials \
