@@ -18,6 +18,7 @@ export AZ_BLOB_CREDENTIAL="$stgkey"
 snakemake --kubernetes \
     --default-remote-provider AzBlob \
     --default-remote-prefix $containername \
-    --envvars AZ_BLOB_ACCOUNT_URL AZ_BLOB_CREDENTIALS \
+    --envvars AZ_BLOB_ACCOUNT_URL AZ_BLOB_CREDENTIAL \
     --use-conda \
+    --container-image "ceeles/snakemake-aks:latest" \
     --jobs 3

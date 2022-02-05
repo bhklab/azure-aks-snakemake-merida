@@ -37,7 +37,6 @@ dependencies:
   - datrie=0.8.2=py37h27cfd23_0
   - defusedxml=0.7.1=pyhd3eb1b0_0
   - docutils=0.18.1=py37h06a4308_2
-  - dropbox=11.25.0=py39hd3eb1b0_0
   - expat=2.4.1=h2531618_2
   - fftw=3.3.10=nompi_h77c792f_102
   - filechunkio=1.8=py_2
