@@ -1,4 +1,0 @@
-# Fill in the configuration and run `mv dot_azure .azure`
-region=your_region
-resgroup=your_resource_group
-stgacct=your_storage_account

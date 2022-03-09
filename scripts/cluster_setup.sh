@@ -31,16 +31,20 @@ az storage container create \
 
 # Fetch the data
 git clone \
-    https://github.com/snakemake/snakemake-tutorial-data.git \
-    tmp/snakemake-tutorial-data
+    -b aks_deployment \
+    git@github.com:bhklab/MERIDA_snakemake_pipeline.git  \
+    tmp/MERIDA_snakemake_pipeline
 
-# Upload to blob storage
+cp -r ../MERIDA_snakemake_pipeline/procdata \
+    tmp/MERIDA_snakemake_pipeline/procdata
+
+# Upload data to blob storage
 az storage blob upload-batch \
     -d $containername \
     --account-name $stgacct \
     --account-key $stgkey \
-    -s tmp/snakemake-tutorial-data/data/ \
-    --destination-path data
+    -s tmp/MERIDA_snakemake_pipeline/procdata/ \
+    --destination-path procdata
 
 # -- Configure and create AKS cluster
 
