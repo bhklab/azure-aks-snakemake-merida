@@ -20,5 +20,5 @@ snakemake --kubernetes \
     --default-remote-prefix $containername \
     --envvars AZ_BLOB_ACCOUNT_URL AZ_BLOB_CREDENTIAL \
     --use-conda \
-    --container-image "bhklabbatch.azurecr.io/aks/aks-snakemake-cplex-merida-r:latest" \
+    --container-image "bhklabbatch.azurecr.io/aks/aks-snakemake-cplex-merida:latest" \
     --jobs 6

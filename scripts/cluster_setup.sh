@@ -32,10 +32,10 @@ az storage container create \
 # Fetch the data
 git clone \
     -b aks_deployment \
-    git@github.com:bhklab/MERIDA_snakemake_pipeline.git  \
+    git@github.com:bhklab/MERIDA_snakemake_pipeline.git \
     tmp/MERIDA_snakemake_pipeline
 
-cp -r ../MERIDA_snakemake_pipeline/procdata \
+cp -r procdata \
     tmp/MERIDA_snakemake_pipeline/procdata
 
 # Upload data to blob storage
@@ -52,6 +52,7 @@ az storage blob upload-batch \
 az aks create \
     --resource-group $resgroup \
     --name $clustername \
+    --attach-acr $ACR_NAME \
     --vm-set-type VirtualMachineScaleSets \
     --load-balancer-sku standard \
     --enable-cluster-autoscaler \
