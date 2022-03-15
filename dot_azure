@@ -1,0 +1,7 @@
+# rename this file to .azure and fill in values!
+region=<your_region>
+tenantid=<your_tenant_id>
+resgroup=<your_research_group>
+stgacct=<your_storage_acct>
+containername=<your_storage_container>
+ACR_NAME=<your_azure_container_registry>

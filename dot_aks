@@ -1,0 +1,5 @@
+clustername=<your_cluster_name>
+startnodes=<num_start_nodes>
+minnodes=<min_num_nodes>
+maxnodes=<max_num_nodes>
+vmsize=Standard_D3_v2  # replace wth your desited node VM size
