@@ -1,11 +1,12 @@
 #!/bin/bash
 
-## -- Authenticate with Azure (requires manual user input)
-az login
-
 # -- Read in configuration files
 source .azure
 source .aks
+
+## -- Authenticate with Azure (requires manual user input)
+az login --tenant $tenantid
+
 
 # -- Create a Blob storage container
 
